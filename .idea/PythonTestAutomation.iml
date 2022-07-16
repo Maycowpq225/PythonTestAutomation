@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/venv/Lib/site-packages/selenium/webdriver/firefox/amd64" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/Lib/site-packages/selenium/webdriver/firefox/x86" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/Lib/site-packages/selenium/webdriver/android" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/Lib/site-packages/selenium/webdriver/blackberry" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/Lib/site-packages/selenium/webdriver/opera" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/Lib/site-packages/selenium/webdriver/phantomjs" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/Lib/site-packages/urllib3/packages/ssl_match_hostname" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/Lib/site-packages/nose" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/Lib/site-packages/nose-1.3.7.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/Lib/site-packages/parse-1.11.1-py3.9.egg-info" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/Lib/site-packages/parse_type-0.4.2.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/Lib/site-packages/selenium-3.141.0.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/Lib/site-packages/six-1.12.0.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/Lib/site-packages/urllib3-1.26.5.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/man" />
+    </content>
     <orderEntry type="jdk" jdkName="Python 3.9 (PythonTestAutomation)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
