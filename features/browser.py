@@ -1,6 +1,7 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class Browser(object):
 
@@ -25,6 +26,8 @@ class Browser(object):
         driver.set_window_size(1280, 800)
     driver.implicitly_wait(15)
     driver.set_page_load_timeout(60)
+    wait = WebDriverWait(driver, 15)
+    EC = EC
 
     def close(context):
         context.driver.close()

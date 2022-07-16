@@ -1,5 +1,10 @@
 import time
 from features.browser import Browser
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.remote import webelement
+
 
 class BasePage(Browser):
 
@@ -20,7 +25,8 @@ class BasePage(Browser):
             try:
                 if self.get_element(*locator).is_displayed():
                     break
-            except: pass
+            except:
+                pass
             self.driver.execute_script("window.scrollTo(0, window.scrollY + 200)")
             time.sleep(1)
 
@@ -29,3 +35,9 @@ class BasePage(Browser):
 
     def get_page_title(self):
         return self.driver.title
+
+    def is_element_visible(self, *locator, timeout):
+        try:
+            return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator)).is_displayed()
+        except TimeoutException:
+            return False
