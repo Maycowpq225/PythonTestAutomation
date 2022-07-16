@@ -12,4 +12,4 @@ def step_impl(context):
 
 @when('click on sign in button logged out home')
 def step_impl(context):
-    ...
+    context.loggedOutHomePage.clickOnSignIn()

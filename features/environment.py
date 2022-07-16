@@ -3,7 +3,6 @@ from features.po.basePage import BasePage
 
 
 def before_all(context):
-    ...
     context.browser = Browser()
     context.basePage = BasePage()
 
