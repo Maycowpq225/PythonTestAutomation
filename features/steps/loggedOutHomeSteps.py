@@ -10,6 +10,6 @@ def step_impl(context):
     assert_true(context.loggedOutHomePage.validateLoggedOutHome())
 
 
-@when('click on sign in button logged out home')
+@when('click on sign in button on logged out home')
 def step_impl(context):
     context.loggedOutHomePage.clickOnSignIn()

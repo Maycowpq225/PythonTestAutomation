@@ -1,44 +1,37 @@
+from features.po.basePage import BasePage
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
-from features.environment import Browser
 
 
-class LoginPageElements(object):
+class AuthenticationPageElements(object):
+    # LABELS
+    LBL_AUTHENTICATION = (By.XPATH, '//h1[contains(.,"Authentication")]')
 
-    BODY = '#yDmH0d'
-    USER = 'identifierId'
-    USER_SUBMIT = '#identifierNext > content > span'
-    PASS = '#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input'
-    SUBMIT = '#passwordNext > content > span'
-    LOGIN_ERROR = '#password > div.LXRPh > div.dEOOab.RxsGPe'
+    # BUTTONS
+    BTN_SIGN_IN = (By.CSS_SELECTOR, 'p.submit')
+    BTN_CREATE_AN_ACCOUNT = (By.CSS_SELECTOR, 'button#SubmitCreate')
+
+    # FIELDS
+    FIELD_REGISTER_EMAIL = (By.CSS_SELECTOR, 'input#email_create')
+    FIELD_LOGIN_EMAIL = (By.CSS_SELECTOR, 'input#email')
+    FIELD_LOGIN_PASSWORD = (By.CSS_SELECTOR, 'input#passwd')
 
 
-class LoginPage(Browser):
-    # login page actions
+class AuthenticationPage(BasePage):
 
-    def get_page_title(self):
-        return self.driver.title
+    def validateAuthenticationPage(self):
+        return self.is_element_visible(*AuthenticationPageElements.LBL_AUTHENTICATION, timeout=15)
 
-    def get_login_error(self):
-        return self.driver.find_element_by_css_selector(LoginPageElements.LOGIN_ERROR)
+    def fillRegisterFieldEmail(self, email):
+        self.fill(email, *AuthenticationPageElements.FIELD_REGISTER_EMAIL)
 
-    def set_username(self, username):
-        user_name_field = self.driver.find_element_by_id(LoginPageElements.USER)
-        user_name_field.send_keys(username)
-        self.driver.find_element_by_css_selector(LoginPageElements.USER_SUBMIT).click()
+    def clickOnCreateAnAccount(self):
+        self.click_element(*AuthenticationPageElements.BTN_CREATE_AN_ACCOUNT)
 
-    def set_password(self, password):
-        password_field = WebDriverWait(self.driver, 5000).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, LoginPageElements.PASS))
-        )
-        password_field.send_keys(password)
+    def fillLoginFieldEmail(self, email):
+        self.fill(email, *AuthenticationPageElements.FIELD_LOGIN_EMAIL)
 
-    def submit_login(self):
-        self.driver.find_element_by_css_selector(LoginPageElements.SUBMIT).click()
+    def fillLoginFieldPassword(self, password):
+        self.fill(password, *AuthenticationPageElements.FIELD_LOGIN_PASSWORD)
 
-    def login(self, username, password):
-        self.set_username(username)
-        self.set_password(password)
-        self.submit_login()
+    def clickOnSignIn(self):
+        self.click_element(*AuthenticationPageElements.BTN_SIGN_IN)

@@ -1,10 +1,9 @@
 from behave import *
-from features.services.OneSecmailService import OneSecmailService
+from utils.personUtil import PersonUtil
 
 @given('a new user is created')
 def step_impl(context):
-    context.email = OneSecmailService().generateNewEmail()
-    print(context.email)
+    context.person = PersonUtil()
 
 
 @then('validate the error message {message}')
