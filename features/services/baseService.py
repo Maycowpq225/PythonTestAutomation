@@ -3,6 +3,9 @@ import requests
 
 class BaseService():
 
+    def doGetRequest(self, url):
+        return requests.get(url)
+
     def doGetRequestPayload(self, url, payload):
         return requests.get(url, params=payload)
 
