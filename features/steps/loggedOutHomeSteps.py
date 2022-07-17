@@ -5,7 +5,7 @@ from nose.tools import assert_true
 
 @when('user is on the logged out home page')
 def step_impl(context):
-    context.loggedOutHomePage = LoggedOutHomePage()
+    context.loggedOutHomePage = LoggedOutHomePage(context.driver)
     context.loggedOutHomePage.navigateToAutomationPratice()
     assert_true(context.loggedOutHomePage.validateLoggedOutHome())
 

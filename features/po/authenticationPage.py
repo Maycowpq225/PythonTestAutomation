@@ -17,6 +17,8 @@ class AuthenticationPageElements(object):
 
 
 class AuthenticationPage(BasePage):
+    def __init__(self, driver):
+        self.driver = driver
 
     def validateAuthenticationPage(self):
         return self.is_element_visible(*AuthenticationPageElements.LBL_AUTHENTICATION, timeout=15)

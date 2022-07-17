@@ -6,16 +6,18 @@ Feature: create account
     And click on sign in button on logged out home
     Then validate the authentication page
 
-#  Scenario: Create an account with valid credentials
-#    When fill the field register email
-#    And click on create an account
-#    Then validate the cadastral page
-#    When fill fields personal information
-#    And fill fields your address
-#    And click on register button
-#    Then validate my account page
+  @web
+  Scenario: Create an account with valid credentials
+    When fill the field register email
+    And click on create an account
+    Then validate the cadastral page
+    When fill fields personal information
+    And fill fields your address
+    And click on register button
+    Then validate my account page
 
-  Scenario Template: Create an account with invalid emails
+  @web
+  Scenario Outline: Create an account with invalid emails
     When fill the field email with <emails>
     And click on create an account
     Then validate the error message "Invalid email address."
@@ -27,12 +29,13 @@ Feature: create account
       | @gmail.com         |
       | joao553235         |
 
-#  Scenario: Create an account without fill registrations fields
-#    When fill the field email
-#    And click on create an account
-#    Then validate the cadastral page
-#    When click on register button
-#    Then validate the error message "There are 8 errors"
+  @web
+  Scenario: Create an account without fill registrations fields
+    When fill the field register email
+    And click on create an account
+    Then validate the cadastral page
+    When click on register button
+    Then validate the error message "There are 8 errors"
 
 
 

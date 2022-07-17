@@ -10,5 +10,5 @@ def step_impl(context):
 
 @then('validate the error message {message}')
 def step_impl(context, message):
-    context.basePage = BasePage()
+    context.basePage = BasePage(context.driver)
     assert_true(context.basePage.is_element_visible_by_text(message, timeout=15))

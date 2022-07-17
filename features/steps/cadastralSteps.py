@@ -4,7 +4,7 @@ from features.po.cadastralPage import CadastralPage
 
 @then('validate the cadastral page')
 def validateCadastralPage(context):
-    context.cadastralPage = CadastralPage()
+    context.cadastralPage = CadastralPage(context.driver)
     assert_true(context.cadastralPage.validateCadastralScreen())
 
 @when('fill fields personal information')

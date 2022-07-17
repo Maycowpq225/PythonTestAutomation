@@ -1,12 +1,12 @@
 from features.browser import Browser
-from features.po.basePage import BasePage
+
+def before_tag(context, tag):
+    if tag == "web":
+        context.browser = Browser("chrome")
+        context.driver = context.browser.getDriver()
 
 
-def before_all(context):
-    context.browser = Browser()
-    context.basePage = BasePage()
-
-
-def after_all(context):
-    context.browser.close()
-    context.browser.quit()
+def after_tag(context, tag):
+    if tag == "web":
+        context.browser.close()
+        context.browser.quit()

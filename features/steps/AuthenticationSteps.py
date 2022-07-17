@@ -4,7 +4,7 @@ from nose.tools import assert_true
 
 @then('validate the authentication page')
 def validateAuthenticationScreen(context):
-    context.auPage = AuthenticationPage()
+    context.auPage = AuthenticationPage(context.driver)
     assert_true(context.auPage.validateAuthenticationPage())
 
 @when('fill the field register email')
