@@ -3,7 +3,7 @@ from features.browser import Browser
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.remote import webelement
+from selenium.webdriver.common.by import By
 
 
 class BasePage(Browser):
@@ -42,3 +42,12 @@ class BasePage(Browser):
             return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator)).is_displayed()
         except TimeoutException:
             return False
+
+    def is_element_visible_by_text(self, text, timeout):
+        try:
+            return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located((By.XPATH, '//*[contains(text(), ' + text + ')]'))).is_displayed()
+        except TimeoutException:
+            return False
+
+    def find_element_by_text(self, text):
+        return self.driver.find_element((By.XPATH, '//*[contains(text(), ' + text + ')]'))

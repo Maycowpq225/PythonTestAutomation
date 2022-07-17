@@ -30,7 +30,6 @@ class CadastralPE(object):
 
 
 class CadastralPage(BasePage):
-
     def validateCadastralScreen(self):
         return self.is_element_visible(*CadastralPE.LBL_CREATE_AN_ACCOUNT, timeout=15)
 
