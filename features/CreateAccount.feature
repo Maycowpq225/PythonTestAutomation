@@ -10,7 +10,8 @@ Feature: create account
     When fill the field register email
     And click on create an account
     Then validate the cadastral page
-    When fill all fields to register
+    When fill fields personal information
+    And fill fields your address
     And click on register button
     Then validate my account page
 

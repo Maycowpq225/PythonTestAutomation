@@ -9,6 +9,7 @@ from selenium.webdriver.remote import webelement
 class BasePage(Browser):
 
     def fill(self, text, *locator):
+        self.driver.find_element(*locator).clear()
         self.driver.find_element(*locator).send_keys(text)
 
     def click_element(self, *locator):

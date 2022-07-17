@@ -1,23 +1,21 @@
 from behave import *
+from nose.tools import assert_true
+from features.po.cadastralPage import CadastralPage
 
 @then('validate the cadastral page')
-def validateCadastralScreen(context):
-    ...
+def validateCadastralPage(context):
+    context.cadastralPage = CadastralPage()
+    assert_true(context.cadastralPage.validateCadastralScreen())
 
-@when('fill all fields to register')
-def fillFieldsRegister(context):
-    ...
+@when('fill fields personal information')
+def fillFieldsPersonalInformation(context):
+    context.cadastralPage.fillFieldsPersonalInformation(context.person)
 
-@when('fill all fields except the {exceptField} field')
-def fillFieldsRegisterExcept(context, exceptField):
-    ...
+@when('fill fields your address')
+def fillFieldsyouraddress(context):
+    context.cadastralPage.fillFieldsyouraddress(context.person)
 
 @when('click on register button')
 def clickRegisterBtn(context):
-    ...
-
-@then('validate that the account has not been created')
-def validateAccountNotCreated(context):
-    ...
-
+    context.cadastralPage.clickRegisterBtn()
 
