@@ -7,7 +7,7 @@ class AuthenticationPageElements(object):
     LBL_AUTHENTICATION = (By.XPATH, '//h1[contains(.,"Authentication")]')
 
     # BUTTONS
-    BTN_SIGN_IN = (By.CSS_SELECTOR, 'p.submit')
+    BTN_SIGN_IN = (By.CSS_SELECTOR, 'button#SubmitLogin')
     BTN_CREATE_AN_ACCOUNT = (By.CSS_SELECTOR, 'button#SubmitCreate')
 
     # FIELDS

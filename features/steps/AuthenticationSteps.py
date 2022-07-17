@@ -24,6 +24,6 @@ def fillLoginFields(context, email, password):
     context.auPage.fillLoginFieldEmail(email)
     context.auPage.fillLoginFieldPassword(password)
 
-@when('click on sign button')
+@when('click on sign in button')
 def clickSignInBtn(context):
     context.auPage.clickOnSignIn()

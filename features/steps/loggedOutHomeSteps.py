@@ -2,7 +2,7 @@ from behave import *
 from features.po.loggedOutHomePage import LoggedOutHomePage
 from nose.tools import assert_true
 
-
+@given('user is on the logged out home page')
 @when('user is on the logged out home page')
 def step_impl(context):
     context.loggedOutHomePage = LoggedOutHomePage(context.driver)
@@ -10,6 +10,7 @@ def step_impl(context):
     assert_true(context.loggedOutHomePage.validateLoggedOutHome())
 
 
+@given('click on sign in button on logged out home')
 @when('click on sign in button on logged out home')
 def step_impl(context):
     context.loggedOutHomePage.clickOnSignIn()
