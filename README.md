@@ -8,7 +8,7 @@
 # Python Test Automation
 
 # Requirements
-- Python 3+
+- Python 3
 - Behave
 - Selenium Webdriver
 - Requests
@@ -20,6 +20,6 @@
 - Clone the project from https://github.com/Maycowpq225/PythonTestAutomation
 - If you are in the Pycharm IDE, going to plugins and download ```Gherkin (JetBrains)```, ```Ini (JetBrains)``` and ```PyVenv Manage (Nokia)```
 - Install requirements using the following command in your terminal ```$ pip install -r requirements.txt```
-- Turn on your virtual enviroment using the following command in your terminal ```$ venv/Scripts/activate.bat```
-- If the above step dont work, follow this ```open Pycharm settings > Project:PythonTestAutomation > Python Interpreter > click on the gear > add > select Existing enviroment > ok```
+- Turn on your virtual environment using the following command in your terminal ```$ venv/Scripts/activate.bat```
+- If the above step don't work, follow this ```open Pycharm settings > Project:PythonTestAutomation > Python Interpreter > click on the gear > add > select Existing enviroment > ok```
 
