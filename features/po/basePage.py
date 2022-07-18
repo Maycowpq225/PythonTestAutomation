@@ -53,3 +53,6 @@ class BasePage:
 
     def find_element_by_text(self, text):
         return self.driver.find_element((By.XPATH, '//*[contains(text(), ' + text + ')]'))
+
+    def getScreenShotAndSave(self, folder, imageName):
+        self.driver.save_screenshot(folder + '/' + imageName +'.png')

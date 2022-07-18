@@ -6,6 +6,7 @@ from features.po.cadastralPage import CadastralPage
 def validateCadastralPage(context):
     context.cadastralPage = CadastralPage(context.driver)
     assert_true(context.cadastralPage.validateCadastralScreen())
+    context.cadastralPage.getScreenShotAndSave(context.scenarioFolder, 'cadastralScreen')
 
 @when('fill fields personal information')
 def fillFieldsPersonalInformation(context):

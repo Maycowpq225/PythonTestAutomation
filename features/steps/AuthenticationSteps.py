@@ -6,6 +6,7 @@ from nose.tools import assert_true
 def validateAuthenticationScreen(context):
     context.auPage = AuthenticationPage(context.driver)
     assert_true(context.auPage.validateAuthenticationPage())
+    context.auPage.getScreenShotAndSave(context.scenarioFolder, 'loginScreen')
 
 @when('fill the field register email')
 def fillFieldRegisterEmail(context):

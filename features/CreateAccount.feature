@@ -36,8 +36,3 @@ Feature: create account
     Then validate the cadastral page
     When click on register button
     Then validate the error message "There are 8 errors"
-
-
-
-
-

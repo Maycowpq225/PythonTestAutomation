@@ -5,3 +5,4 @@ from features.po.myAccountPage import MyAccountPage
 def validateMyAccountPage(context):
     context.myAccountPage = MyAccountPage(context.driver)
     context.myAccountPage.validateMyAccountScreen()
+    context.myAccountPage.getScreenShotAndSave(context.scenarioFolder, 'LoginOrRegistrationDoneScreen')
