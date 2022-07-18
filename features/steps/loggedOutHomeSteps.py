@@ -8,6 +8,7 @@ def step_impl(context):
     context.loggedOutHomePage = LoggedOutHomePage(context.driver)
     context.loggedOutHomePage.navigateToAutomationPratice()
     assert_true(context.loggedOutHomePage.validateLoggedOutHome())
+    context.driver.save_screenshot("loggedOutpage.PNG")
 
 
 @given('click on sign in button on logged out home')
